@@ -61,5 +61,3 @@ export default class RoundCheckbox extends React.Component {
         );
     }
 }
-
-module.exports = RoundCheckbox;
