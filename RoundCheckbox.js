@@ -21,7 +21,7 @@ export default class RoundCheckbox extends React.Component {
 
     static defaultProps = {
         icon: "ios-checkmark",
-        size: 40,
+        size: 24,
         backgroundColor: '#007AFF',
         iconColor: 'white',
         borderColor: 'grey',

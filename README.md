@@ -1,16 +1,21 @@
 # React Native Round Checkbox
 
 
-Simple checkbox styled as in iOS. Depends on `react-native-vector-icons`
+Pure js, lightweight checkbox styled as in iOS. Depends on `react-native-vector-icons`
+
+### install
+`npm i --save rn-round-checkbox`
 
 ### Usage
 `import RoundCheckbox from 'rn-round-checkbox';`
 
+![Example 1](https://raw.githubusercontent.com/vonovak/react-native-round-checkbox/master/image.png "Example 1")
+
 ```
 <RoundCheckbox
-  size={23}
-  checked={this.isSelected}
-  onValueChange={this.onChange}
+  size={24}
+  checked={this.state.isSelected}
+  onValueChange={(newValue) => {console.log(newValue)}}
 />
 
 ```
@@ -20,8 +25,15 @@ Simple checkbox styled as in iOS. Depends on `react-native-vector-icons`
 |-----------|--------|---------|--------------------------------------------|
 | icon | `string` | ios-checkmark | name of icon (from Ionicons) in the checkbox |
 | backgroundColor | `string` | '#007AFF' | background color when checked |
-| size | `number` | 40 | icon size |
+| size | `number` | 24 | icon size |
 | iconColor | `string` | 'white' | icon color |
 | borderColor | `string` | 'grey' | border color |
 | checked | `boolean` | false | checked |
 | onValueChange | function | | function called on change with new value|
+
+
+![Example](https://raw.githubusercontent.com/vonovak/react-native-flabel-textfield/master/fl.gif "Example")
+
+Checkbox, TextInput and [Floating label textinput](https://github.com/vonovak/react-native-flabel-textfield)
+
+License: MIT
