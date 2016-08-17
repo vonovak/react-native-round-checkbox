@@ -3,6 +3,17 @@
 
 Simple checkbox styled as in iOS. Depends on `react-native-vector-icons`
 
+### Usage
+`import RoundCheckbox from 'rn-round-checkbox';`
+
+```
+<RoundCheckbox
+  size={23}
+  checked={this.isSelected}
+  onValueChange={this.onChange}
+/>
+
+```
 ### Props
 
 | Property | Type | Default | Description |
