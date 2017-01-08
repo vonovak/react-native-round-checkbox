@@ -48,7 +48,7 @@ export default class RoundCheckbox extends React.Component {
 
     render() {
         return (
-            <TouchableWithoutFeedback onPress={this._onPress}>
+            <TouchableWithoutFeedback hitSlop={{top: 8, bottom: 8, left: 8, right: 8}} onPress={this._onPress}>
                 <View shouldRasterizeIOS={true} style={this.iconWrapperStyle()}>
                     <Icon
                         name={this.props.icon}
