@@ -1,6 +1,6 @@
 {
   "name": "rn-round-checkbox",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "peerDependencies": {
     "react-native-vector-icons": "^4.0.0"
   },
