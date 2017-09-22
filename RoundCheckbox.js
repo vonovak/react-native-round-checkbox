@@ -1,20 +1,19 @@
-import React, { PropTypes } from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 import { View, TouchableWithoutFeedback } from 'react-native';
-
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const hitSlop = { top: 8, bottom: 8, left: 8, right: 8 };
 
 export default class RoundCheckbox extends React.PureComponent {
   static propTypes = {
-    onValueChange: React.PropTypes.func,
-    icon: React.PropTypes.string,
-    size: React.PropTypes.number,
-    backgroundColor: React.PropTypes.string,
-    iconColor: React.PropTypes.string,
-    borderColor: React.PropTypes.string,
-    checked: React.PropTypes.bool,
+    onValueChange: PropTypes.func,
+    icon: PropTypes.string,
+    size: PropTypes.number,
+    backgroundColor: PropTypes.string,
+    iconColor: PropTypes.string,
+    borderColor: PropTypes.string,
+    checked: PropTypes.bool,
   };
 
   static defaultProps = {
