@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, TouchableWithoutFeedback } from 'react-native';
+import { View, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const hitSlop = { top: 8, bottom: 8, left: 8, right: 8 };
@@ -26,35 +26,43 @@ export default class RoundCheckbox extends React.PureComponent {
     onValueChange: () => {},
   };
 
-  iconWrapperStyle() {
-    return {
-      width: this.props.size,
-      height: this.props.size,
-      backgroundColor: this.props.checked ? this.props.backgroundColor : 'transparent',
-      borderColor: this.props.checked ? this.props.backgroundColor : this.props.borderColor,
-      borderRadius: this.props.size / 2,
-      borderWidth: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    };
+  render() {
+    const iconSize = parseInt(this.props.size * 1.3);
+    return (
+      <TouchableWithoutFeedback hitSlop={hitSlop} onPress={this._onPress}>
+        <View
+          shouldRasterizeIOS={true}
+          style={[this.getIconWrapperStyle(), styles.commonWrapperStyles]}
+        >
+          <Icon
+            name={this.props.icon}
+            color={this.props.checked ? this.props.iconColor : 'transparent'}
+            style={{ height: iconSize, fontSize: iconSize, backgroundColor: 'transparent' }}
+          />
+        </View>
+      </TouchableWithoutFeedback>
+    );
   }
 
   _onPress = () => {
     this.props.onValueChange(!this.props.checked);
   };
 
-  render() {
-    return (
-      <TouchableWithoutFeedback hitSlop={hitSlop} onPress={this._onPress}>
-        <View shouldRasterizeIOS={true} style={this.iconWrapperStyle()}>
-          <Icon
-            name={this.props.icon}
-            size={this.props.size * 1.3}
-            color={this.props.checked ? this.props.iconColor : 'transparent'}
-            style={{ height: this.props.size * 1.3, backgroundColor: 'transparent' }}
-          />
-        </View>
-      </TouchableWithoutFeedback>
-    );
+  getIconWrapperStyle() {
+    return {
+      width: this.props.size,
+      height: this.props.size,
+      backgroundColor: this.props.checked ? this.props.backgroundColor : 'transparent',
+      borderColor: this.props.checked ? this.props.backgroundColor : this.props.borderColor,
+      borderRadius: this.props.size / 2,
+    };
   }
 }
+
+const styles = StyleSheet.create({
+  commonWrapperStyles: {
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
