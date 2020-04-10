@@ -8,5 +8,6 @@
     "type": "git",
     "url": "https://github.com/vonovak/react-native-round-checkbox"
   },
-  "main": "RoundCheckbox.js"
+  "main": "RoundCheckbox.js",
+  "type": "index.d.ts"
 }
