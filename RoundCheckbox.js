@@ -14,6 +14,7 @@ export default class RoundCheckbox extends React.PureComponent {
     iconColor: PropTypes.string,
     borderColor: PropTypes.string,
     checked: PropTypes.bool,
+    style: PropTypes.object,
   };
 
   static defaultProps = {
@@ -32,7 +33,7 @@ export default class RoundCheckbox extends React.PureComponent {
       <TouchableWithoutFeedback hitSlop={hitSlop} onPress={this._onPress}>
         <View
           shouldRasterizeIOS={true}
-          style={[this.getIconWrapperStyle(), styles.commonWrapperStyles]}
+          style={[this.getIconWrapperStyle(), styles.commonWrapperStyles, this.props.style]}
         >
           <Icon
             name={this.props.icon}
