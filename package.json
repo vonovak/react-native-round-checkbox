@@ -2,7 +2,7 @@
   "name": "rn-round-checkbox",
   "version": "0.3.4",
   "peerDependencies": {
-    "react-native-vector-icons": "^4.0.0"
+    "react-native-vector-icons": "*"
   },
   "repository": {
     "type": "git",
